@@ -1,3 +1,7 @@
+clear all
+
+clc
+
 fileName = '..\HowlingAudioSamples\HowlingSample.m4a';
 nPlayTimes = 1;
 fileReader = dsp.AudioFileReader(fileName, 'PlayCount', nPlayTimes);
