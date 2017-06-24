@@ -1,3 +1,4 @@
+% -- fixed point version -- %
 clear all
 
 clc
@@ -7,7 +8,8 @@ fileName = '..\HowlingAudioSamples\HowlingSample.m4a';
 
 % fileReader.member => Filename, PlayCount(1), SampleRate, SamplesPerFrame(1024), OutputDataType(double:int16|uint8)
 % fileReader = dsp.AudioFileReader(fileName, 'PlayCount', nPlayTimes);
-fileReader = dsp.AudioFileReader(fileName); % default import func
+% fileReader = dsp.AudioFileReader(fileName); % default import func
+fileReader = dsp.AudioFileReader(fileName, 'OutputDataType', 'int16'); 
 
 %fileInfo.member => Filename, CompressionMethod, SampleRate, TotalSamples, Duration, Title, Comment, Artist, BitRate
 fileInfo = audioinfo(fileName);
@@ -29,4 +31,6 @@ while ~isDone(fileReader)
     count = count + 1;
 end
 
-DrawWaveForm( signalFrameMtx, fileInfo.SampleRate )
+save HSpl_fp.mat 
+
+% DrawWaveForm( signalFrameMtx, fileInfo.SampleRate )
