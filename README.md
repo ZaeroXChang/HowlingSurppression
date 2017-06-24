@@ -1,5 +1,5 @@
-# HowlingSurppression
-HowlingSurppressionForTrainingProg
+# HowlingSuppression
+HowlingSuppressionForTrainingProg
 
 Dev Plan:
 
